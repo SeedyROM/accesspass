@@ -1,5 +1,8 @@
 use Mix.Config
 
-if Application.get_env(:access_pass, :repo) == nil do
-  import_config "#{Mix.env()}.exs"
+# Load test config only for local testing
+with :test <- Mix.env(),
+     nil <- Application.get_env(:access_pass, :repo)
+do
+  import_config "test.exs"
 end

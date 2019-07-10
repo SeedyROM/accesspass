@@ -1,12 +1,6 @@
 use Mix.Config
 
-config :access_pass, AccessPass.Mailer,
-  adapter: Bamboo.SendgridAdapter,
-  api_key: "SG.yoursendgridkey"
-
-config :access_pass,
-       from: "SENDINGEMAIL@whatever.com"
-
+# Set simple/sane defaults for local testing and CI.
 config :access_pass, :ecto_repos, [AccessPass.Repo]
 config :access_pass, AccessPass.Repo, [
   adapter: Ecto.Adapters.Postgres,
