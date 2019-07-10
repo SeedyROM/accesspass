@@ -10,3 +10,5 @@ config :access_pass, AccessPass.Repo, [
   database: "access-pass-test",
   pool_size: 10
 ]
+# Set arbitrary expiration to pass tests
+config :access_pass, :access_expire_in, 5
