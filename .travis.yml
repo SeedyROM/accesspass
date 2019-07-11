@@ -6,5 +6,3 @@ services:
   - postgresql
 addons:
   postgresql: "10"
-before_script:
-  - cp config/travis.exs config/test.exs
