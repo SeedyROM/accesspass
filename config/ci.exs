@@ -1,7 +1,6 @@
 use Mix.Config
-use Logger
 
-Logger.info("TravisCI Build...")
+IO.puts("\nTravisCI Build...\n")
 config :access_pass, AccessPass.Repo,
   username: "postgres",
   password: ""
