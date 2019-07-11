@@ -21,14 +21,15 @@ defmodule AccessPass.Mixfile do
       ],
       version: "1.0.2",
       description:
-        "Provides a full user authentication experience for an API. 
+        "Provides a full user authentication experience for an API.
       Includes login,logout,register,forgot password, forgot username, confirmation email and all that other good stuff.
       Includes plug for checking for authenticated users and macro for generating the required routes.",
       elixir: "~> 1.4",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      package: package()
+      package: package(),
+      aliases: aliases(),
     ]
   end
 
@@ -36,16 +37,36 @@ defmodule AccessPass.Mixfile do
     [extra_applications: [:logger], mod: {AccessPass.Application, []}]
   end
 
+  defp dev_deps do
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+    ]
+  end
+
+  defp test_deps do
+    [
+      {:ecto_sql, ">= 3.0.0", only: :test, runtime: false},
+      {:sync_m, "~> 0.1.0", only: :test, runtime: false},
+    ]
+  end
+
   defp deps do
     [
       {:bamboo, "~> 0.8"},
-      {:ecto, ">= 2.0.4"},
+      {:ecto, ">= 3.0.0"},
       {:plug, "~> 1.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:gettext, "~> 0.11"},
       {:comeonin, "~> 2.0"},
       {:poison, ">= 0.0.0"},
-      {:postgrex, ">= 0.0.0"}
+      {:postgrex, ">= 0.0.0"},
+    ]
+    ++ dev_deps()
+    ++ test_deps()
+  end
+
+  defp aliases do
+    [
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 

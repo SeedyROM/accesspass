@@ -153,7 +153,7 @@ defmodule AccessPassTest do
     assert RefreshToken.refresh(refresh_token) |> TestHelpers.isOkTup() == true
   end
 
-  test "access token is revoked after 10 seconds(in test config) but not refresh token" do
+  test "access token is revoked after 5 seconds (in test config) but not refresh token" do
     TestHelpers.clear()
     assert map = RefreshToken.add("uniq", %{test: "tester"}, 0)
     assert access_token = map.access_token
