@@ -57,7 +57,7 @@ defmodule AccessPass.Mixfile do
       {:plug, "~> 1.0"},
       {:gettext, "~> 0.11"},
       {:comeonin, "~> 2.0"},
-      {:poison, ">= 0.0.0"},
+      {:jason, ">= 0.0.0"},
       {:postgrex, ">= 0.0.0"},
     ]
     ++ dev_deps()
@@ -66,7 +66,7 @@ defmodule AccessPass.Mixfile do
 
   defp aliases do
     [
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
 
