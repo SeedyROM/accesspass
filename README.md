@@ -1,5 +1,7 @@
 # AccessPass
 
+[![Build Status](https://travis-ci.com/SeedyROM/accesspass.svg?branch=master)](https://travis-ci.com/SeedyROM/accesspass)
+
 ## Installation
 
 ```elixir
