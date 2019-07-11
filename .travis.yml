@@ -6,8 +6,5 @@ services:
   - postgresql
 addons:
   postgresql: "10"
-env:
-  global:
-  - MIX_ENV=test
-  - PGPORT=5432
-  - PGUSER=postgres
+before_script:
+  - cp config/travis.exs config/test.exs
