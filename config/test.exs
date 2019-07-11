@@ -9,5 +9,8 @@ config :access_pass, AccessPass.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,
   priv: "test/"
+config :access_pass, AccessPass.Mailer,
+  adapter: Bamboo.LocalAdapter
+
 # Set arbitrary expiration to pass tests
 config :access_pass, :access_expire_in, 5
