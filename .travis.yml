@@ -4,6 +4,8 @@ elixir:
   - '1.7.0'
 services: 
   - postgresql
+before_script:
+  - psql -c 'create database access_pass_test;' -U postgres
 addons:
   postgresql: "10"
 env:
