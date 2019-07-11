@@ -10,6 +10,3 @@ addons:
     packages:
     - postgresql-10
     - postgresql-client-10
-env:
-  global:
-    - PGUSER=postgres
