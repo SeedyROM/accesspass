@@ -1,4 +1,5 @@
 use Mix.Config
 
 config :access_pass, AccessPass.Repo,
-  password: ""
+  database: "travis_ci_test",
+  password: "",
