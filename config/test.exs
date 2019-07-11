@@ -14,6 +14,3 @@ config :access_pass, AccessPass.Mailer,
 
 # Set arbitrary expiration to pass tests
 config :access_pass, :access_expire_in, 5
-
-# Load CI config in Travis
-if System.get_env("CI") == "true", do: import_config "ci.exs"
