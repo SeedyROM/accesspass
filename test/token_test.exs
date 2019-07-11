@@ -1,4 +1,4 @@
-defmodule AccessPassTest do
+defmodule TokenTest do
   use ExUnit.Case
   alias AccessPass.{RefreshToken, AccessToken, TestHelpers}
   doctest AccessPass
